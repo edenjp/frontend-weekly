@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Como usar datalist</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Como usar datalist</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/html"
+                tilte="Categoria">html</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2018-01-13" 
+                title="Puclicado em 13 jan 2018"
+                itemprop="datePublished">13 jan 18 16h 36m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <h3 id="Entendendo"><a href="#Entendendo" class="headerlink" title="Entendendo"></a>Entendendo</h3><p>Este elemento <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element" target="_blank" rel="noopener">datalist</a> do Html5 contém uma lista de elementos <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element" target="_blank" rel="noopener">option</a> que representam as opções possíveis para o valor de outros elementos.</p>
+<h2 id="Informacoes"><a href="#Informacoes" class="headerlink" title="Informações"></a>Informações</h2><p>Seu <strong>display</strong> default é none.<br>Para <strong>usar</strong> é bem simples basta abrir a tag datalist e dentro adicionar as opções com a tag option.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">datalist</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"opcao_1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"opcao_2"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"opcao_2"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>Para <strong>usar em input</strong> voçê deve atribuir um id e adicionar o atributo list ao input abaixo tem um exemplo. </p>
+<h3 id="Exemplos"><a href="#Exemplos" class="headerlink" title="Exemplos"></a>Exemplos</h3><p>Abaixo um caso onde ele pode se tornar bem util:</p>
+<p><label><br>    Meio de transporte:<br>    <input type="text" list="transportes"><br></label></p>
+<datalist id="transportes"><br>  <option value="Bicicleta"><br>  </option><option value="Obinus"><br>  </option><option value="Moto"><br>  </option><option value="Carro"><br>  </option><option value="Taxi"><br></option></datalist>
+
+<ul>
+<li>Input do tipo texto onde a entrada é o meio de transporte, como temos inumeras opcões deixamos as principais predefinidas como o campo é do tipo texto ele pode entrar com novas opções tambem.<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">    Meio de transporte:</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">list</span>=<span class="string">"transportes"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"transportes"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Bicicleta"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Obinus"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Moto"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Carro"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Taxi"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/html"
+                    tilte="Tag">Html</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/html5"
+                    tilte="Tag">Html5</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/input"
+                    tilte="Tag">Input</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/tags"
+                    tilte="Tag">Tags</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>

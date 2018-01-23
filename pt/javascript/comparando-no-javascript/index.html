@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Comparando no Javascript</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Comparando no Javascript</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2017-09-16" 
+                title="Puclicado em 16 set 2017"
+                itemprop="datePublished">16 set 17 23h 43m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <h2 id="Comparadores"><a href="#Comparadores" class="headerlink" title="Comparadores"></a>Comparadores</h2><p>Ha diferentes formas de comparar e montar um if mais legivel.</p>
+<ul>
+<li><p><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-strict-equality-comparison" target="_blank" rel="noopener">===</a> Compara os valores em seu estado original levando em consideração seu tipo.</p>
+</li>
+<li><p><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-abstract-equality-comparison" target="_blank" rel="noopener">==</a> Compara os valores convertendo para um tipo comum e realiza a comparacão ===</p>
+</li>
+<li><p><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-object.is" target="_blank" rel="noopener">Object.is</a> Incluido na <a href="pt/javascript/mudancas-da-es5-para-a-es6">Mudança da es5 para a es6</a> muito parecido com === sua direfença é no caso de NaN e Zeros  </p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// usando ===</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="number">1</span> === <span class="number">1</span> );     <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log( +<span class="number">0</span> === <span class="number">-0</span> );   <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'1'</span> === <span class="number">1</span> );   <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="literal">false</span> === <span class="number">0</span> ); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="literal">NaN</span> === <span class="literal">NaN</span> ); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="literal">null</span> === <span class="literal">undefined</span> ); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// usando ==</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="number">1</span> == <span class="number">1</span> );     <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log( +<span class="number">0</span> == <span class="number">-0</span> );   <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'1'</span> == <span class="number">1</span> );   <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="literal">false</span> == <span class="number">0</span> ); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="literal">NaN</span> == <span class="literal">NaN</span> ); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="literal">null</span> == <span class="literal">undefined</span> ); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// usando Object.is</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Object</span>.is( <span class="number">1</span>, <span class="number">1</span> ) )     <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Object</span>.is( +<span class="number">0</span>, <span class="number">-0</span> ) )   <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Object</span>.is( <span class="string">'1'</span>, <span class="number">1</span> ) )   <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Object</span>.is( <span class="literal">false</span>, <span class="number">0</span> ) ) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Object</span>.is( <span class="literal">NaN</span>, <span class="literal">NaN</span> ) ) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Object</span>.is( <span class="literal">null</span>, <span class="literal">undefined</span> ) ) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="Operadores-logicos"><a href="#Operadores-logicos" class="headerlink" title="Operadores lógicos"></a>Operadores lógicos</h3><ul>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-binary-logical-operators" target="_blank" rel="noopener">&amp;&amp;</a> Sempre que houver valor falso retorna falso ou seja os dois devem apresentar valor</li>
+</ul>
+<blockquote>
+<p>se ambos forem verdadeiros por padrão é retornado o ultimo</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( <span class="string">''</span> &amp;&amp; <span class="string">'valor 1'</span> ); <span class="comment">//</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'valor 0'</span> &amp;&amp; <span class="string">'valor 1'</span> ); <span class="comment">// 'valor 1'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( <span class="number">0</span> &amp;&amp; <span class="number">5</span> ); <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="number">5</span> &amp;&amp; <span class="number">5</span> ); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-binary-logical-operators" target="_blank" rel="noopener">||</a> Se algum dos dois for verdadeiro retorna verdadeiro ou seja sempre retornara oque tiver valor</li>
+</ul>
+<blockquote>
+<p>sempre retornara a primeira sentença verdadeira</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( <span class="string">'valor 1'</span> || <span class="string">''</span> ); <span class="comment">// valor 1</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="string">'valor 0'</span> || <span class="string">'valor 1'</span> ); <span class="comment">// 'valor 0'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( <span class="number">0</span> || <span class="number">5</span> ); <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="number">5</span> || <span class="number">5</span> ); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+</div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/comparadores"
+                    tilte="Tag">Comparadores</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>

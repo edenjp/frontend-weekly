@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Escrevendo uma classe na es6</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Escrevendo uma classe na es6</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2017-08-27" 
+                title="Puclicado em 27 ago 2017"
+                itemprop="datePublished">27 ago 17 22h 57m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <h2 id="Diferencas"><a href="#Diferencas" class="headerlink" title="Diferenças"></a>Diferenças</h2><p>A antiga forma ainda é valida esta é a <strong>sintaxe na es5</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Pessoa</span>(<span class="params">nomeCompleto</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.nomeCompleto = nomeCompleto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Pessoa.prototype.constructor = Pessoa;</span><br><span class="line">Pessoa.prototype.quem = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'Oi, eu sou '</span> + <span class="keyword">this</span>.nomeCompleto;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(Pessoa.prototype, <span class="string">'nomeCompleto'</span>, &#123;</span><br><span class="line">  set: <span class="function"><span class="keyword">function</span>(<span class="params">nomeCompleto</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nomes = nomeCompleto.split(<span class="string">' '</span>);</span><br><span class="line">    <span class="keyword">this</span>.primeiroNome = nomes[<span class="number">0</span>] || <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">this</span>.ultimoNome = nomes[<span class="number">1</span>] || <span class="string">''</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.primeiroNome + <span class="string">' '</span> + <span class="keyword">this</span>.ultimoNome;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Funcionario</span>(<span class="params">nome, cargo = <span class="string">'Estagiario'</span>, salario = <span class="number">0</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.cargo = cargo;</span><br><span class="line">    <span class="keyword">this</span>.salario = salario;</span><br><span class="line">    Pessoa.call(<span class="keyword">this</span>, nome);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Funcionario.prototype = <span class="built_in">Object</span>.create(Pessoa.prototype);</span><br><span class="line">Funcionario.prototype.constructor = Funcionario;</span><br><span class="line"></span><br><span class="line">Funcionario.prototype.profissao = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'Eu sou '</span> + <span class="keyword">this</span>.cargo + <span class="string">' ganho '</span> + <span class="keyword">this</span>.salario;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(Pessoa.prototype, <span class="string">'salario'</span>, &#123;</span><br><span class="line">  set: <span class="function"><span class="keyword">function</span>(<span class="params">valor</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>._salario = valor;</span><br><span class="line">  &#125;,</span><br><span class="line">  get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._salario.toLocaleString(<span class="string">'pt-BR'</span>, &#123;</span><br><span class="line">        currency: <span class="string">'BRL'</span>,</span><br><span class="line">        style: <span class="string">'currency'</span>,</span><br><span class="line">        minimumFractionDigits: <span class="number">2</span></span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>Esta é a nova <strong>sintaxe na es6</strong> podendo mesclar algumas coisas entre as duas<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pessoa</span> </span>&#123; </span><br><span class="line">  <span class="keyword">constructor</span>(nomeCompleto) &#123;</span><br><span class="line">    <span class="keyword">this</span>.nomeCompleto = nomeCompleto;</span><br><span class="line">  &#125;</span><br><span class="line">	</span><br><span class="line">  <span class="comment">// retorna uma apresentacao com o nome completo</span></span><br><span class="line">  quem() &#123;</span><br><span class="line">	  <span class="keyword">return</span> <span class="string">`Oi, eu sou <span class="subst">$&#123;<span class="keyword">this</span>.nomeCompleto&#125;</span>`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">	</span><br><span class="line">  <span class="comment">// seta o primeiro e o segundo nome</span></span><br><span class="line">  set nomeCompleto(nomeCompleto) &#123;</span><br><span class="line">    <span class="keyword">const</span> nomes = nomeCompleto.split(<span class="string">' '</span>);</span><br><span class="line">    <span class="keyword">this</span>.primeiroNome = nomes[<span class="number">0</span>] || <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">this</span>.ultimoNome = nomes[<span class="number">1</span>] || <span class="string">''</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// retorna o nome completo</span></span><br><span class="line">  get nomeCompleto() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.primeiroNome&#125;</span> <span class="subst">$&#123;<span class="keyword">this</span>.ultimoNome&#125;</span>`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Funcionario</span> <span class="keyword">extends</span> <span class="title">Pessoa</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(nome, cargo = 'Estagio', salario = 0) &#123;</span><br><span class="line">    <span class="keyword">super</span>(nome);</span><br><span class="line">    <span class="keyword">this</span>.cargo = cargo;</span><br><span class="line">    <span class="keyword">this</span>.salario = salario;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// retorna o cargo e o salario</span></span><br><span class="line">  profissao() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`Eu sou <span class="subst">$&#123;<span class="keyword">this</span>.cargo&#125;</span> ganho <span class="subst">$&#123;<span class="keyword">this</span>.salario&#125;</span>`</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// seta o salario</span></span><br><span class="line">  set salario(valor) &#123;</span><br><span class="line">    <span class="keyword">this</span>._salario = valor;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// formata o salario</span></span><br><span class="line">  get salario() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._salario.toLocaleString(<span class="string">'pt-BR'</span>, &#123;</span><br><span class="line">      currency: <span class="string">'BRL'</span>,</span><br><span class="line">      style: <span class="string">'currency'</span>,</span><br><span class="line">      minimumFractionDigits: <span class="number">2</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/ecmascript"
+                    tilte="Tag">ECMAScript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/mudancas-da-es5-para-a-es6"
+                    tilte="Tag">Mudancas da es5 para a es6</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/es6"
+                    tilte="Tag">es6</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>

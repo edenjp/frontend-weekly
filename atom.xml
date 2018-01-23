@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Frontend Weekly</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://frontend-weekly.codermarcos.com/"/>
+  <updated>2018-01-23T13:22:52.022Z</updated>
+  <id>http://frontend-weekly.codermarcos.com/</id>
+  
+  <author>
+    <name>codermarcos</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Como usar datalist</title>
+    <link href="http://frontend-weekly.codermarcos.com/pt/html/como-usar-datalist/"/>
+    <id>http://frontend-weekly.codermarcos.com/pt/html/como-usar-datalist/</id>
+    <published>2018-01-13T18:36:56.000Z</published>
+    <updated>2018-01-23T13:22:52.022Z</updated>
+    
+    <summary type="html">
+    
+      Oque é o datalist e alguns case para usalo.
+    
+    </summary>
+    
+      <category term="Html" scheme="http://frontend-weekly.codermarcos.com/categories/html/"/>
+    
+    
+      <category term="Html" scheme="http://frontend-weekly.codermarcos.com/tags/html/"/>
+    
+      <category term="Html5" scheme="http://frontend-weekly.codermarcos.com/tags/html5/"/>
+    
+      <category term="Input" scheme="http://frontend-weekly.codermarcos.com/tags/input/"/>
+    
+      <category term="Tags" scheme="http://frontend-weekly.codermarcos.com/tags/tags/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Descobrindo o Symbol</title>
+    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/descobrindo-o-symbol/"/>
+    <id>http://frontend-weekly.codermarcos.com/pt/javascript/descobrindo-o-symbol/</id>
+    <published>2017-12-05T00:10:04.000Z</published>
+    <updated>2018-01-23T13:22:52.023Z</updated>
+    
+    <summary type="html">
+    
+      Descobrindo oque é o symbol a es6 e como utiliza-lo.
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
+    
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
+    
+      <category term="ECMAScript" scheme="http://frontend-weekly.codermarcos.com/tags/ecmascript/"/>
+    
+      <category term="Mudancas da es5 para a es6" scheme="http://frontend-weekly.codermarcos.com/tags/mudancas-da-es5-para-a-es6/"/>
+    
+      <category term="es6" scheme="http://frontend-weekly.codermarcos.com/tags/es6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Conhecendo o currentcolor</title>
+    <link href="http://frontend-weekly.codermarcos.com/pt/css/conhecendo-o-currentcolor/"/>
+    <id>http://frontend-weekly.codermarcos.com/pt/css/conhecendo-o-currentcolor/</id>
+    <published>2017-11-21T16:57:03.000Z</published>
+    <updated>2018-01-23T13:22:52.022Z</updated>
+    
+    <summary type="html">
+    
+      Entendendo os conceitos do currentColor
+    
+    </summary>
+    
+      <category term="Css" scheme="http://frontend-weekly.codermarcos.com/categories/css/"/>
+    
+    
+      <category term="Css" scheme="http://frontend-weekly.codermarcos.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Conhecendo os recursos do xhr</title>
+    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/conhecendo-os-recursos-do-xhr/"/>
+    <id>http://frontend-weekly.codermarcos.com/pt/javascript/conhecendo-os-recursos-do-xhr/</id>
+    <published>2017-11-21T16:07:04.000Z</published>
+    <updated>2018-01-23T13:22:52.023Z</updated>
+    
+    <summary type="html">
+    
+      Conheçendo recursos do XMLHttpRequest mais conhecido como XHR.
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
+    
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
+    
+      <category term="Comparadores" scheme="http://frontend-weekly.codermarcos.com/tags/comparadores/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Comparando no Javascript</title>
+    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript/"/>
+    <id>http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript/</id>
+    <published>2017-10-21T04:58:04.000Z</published>
+    <updated>2018-01-23T13:22:52.023Z</updated>
+    
+    <summary type="html">
+    
+      Conhecendo melhor os laços do Javascript e suas diferentes utilidades.
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
+    
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
+    
+      <category term="Loops" scheme="http://frontend-weekly.codermarcos.com/tags/loops/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Acessando midias</title>
+    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/acessando-midias/"/>
+    <id>http://frontend-weekly.codermarcos.com/pt/javascript/acessando-midias/</id>
+    <published>2017-09-30T22:27:05.000Z</published>
+    <updated>2018-01-23T13:22:52.022Z</updated>
+    
+    <summary type="html">
+    
+      Acessar os dispositivos de midia input e output do browser.
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
+    
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
+    
+      <category term="Midias" scheme="http://frontend-weekly.codermarcos.com/tags/midias/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Comparando no Javascript</title>
+    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/comparando-no-javascript/"/>
+    <id>http://frontend-weekly.codermarcos.com/pt/javascript/comparando-no-javascript/</id>
+    <published>2017-09-17T02:43:04.000Z</published>
+    <updated>2018-01-23T13:22:52.022Z</updated>
+    
+    <summary type="html">
+    
+      Aprendendo a escolher quais operadores e suas diferenças e qunado usar para qual tipo de comparação.
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
+    
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
+    
+      <category term="Comparadores" scheme="http://frontend-weekly.codermarcos.com/tags/comparadores/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Novidades da es8</title>
+    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/novidades-da-es8/"/>
+    <id>http://frontend-weekly.codermarcos.com/pt/javascript/novidades-da-es8/</id>
+    <published>2017-09-13T02:45:05.000Z</published>
+    <updated>2018-01-23T13:22:52.023Z</updated>
+    
+    <summary type="html">
+    
+      Descobrindo as novas features da es8
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
+    
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
+    
+      <category term="ECMAScript" scheme="http://frontend-weekly.codermarcos.com/tags/ecmascript/"/>
+    
+      <category term="es8" scheme="http://frontend-weekly.codermarcos.com/tags/es8/"/>
+    
+  </entry>
+  
+</feed>

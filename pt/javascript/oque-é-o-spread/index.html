@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Oque é o spread</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Oque é o spread</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2017-09-06" 
+                title="Puclicado em 6 set 2017"
+                itemprop="datePublished">06 set 17 14h 42m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <h2 id="Entendendo"><a href="#Entendendo" class="headerlink" title="Entendendo"></a>Entendendo</h2><p>O <a href="http://www.ecma-international.org/ecma-262/6.0/#sec-expressions" target="_blank" rel="noopener">spread</a> tranforma um array em multiplos elementos “Array literal”<br>Combinar arrays<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="keyword">var</span> vogais = [<span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'i'</span>, <span class="string">'o'</span>, <span class="string">'u'</span>];</span><br><span class="line"><span class="keyword">var</span> consoantes = [<span class="string">'b'</span>, vogais, <span class="string">'c'</span>, <span class="string">'d'</span>]; </span><br><span class="line"><span class="built_in">console</span>.log(consoantes); <span class="comment">// Array [ 'b', […], 'c', 'd' ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6</span></span><br><span class="line"><span class="keyword">var</span> vogais = [<span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'i'</span>, <span class="string">'o'</span>, <span class="string">'u'</span>];</span><br><span class="line"><span class="keyword">var</span> consoantes = [<span class="string">'b'</span>, ...vogais, <span class="string">'c'</span>, <span class="string">'d'</span>]; </span><br><span class="line"><span class="built_in">console</span>.log(consoantes); <span class="comment">// Array [ 'b', 'a', 'e', 'i', 'o', 'u', 'c', 'd' ]</span></span><br></pre></td></tr></table></figure></p>
+<p>Ou extender</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="keyword">var</span> vogais = [<span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'i'</span>, <span class="string">'o'</span>, <span class="string">'u'</span>];</span><br><span class="line"><span class="keyword">var</span> consoantes = [<span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>];</span><br><span class="line"><span class="built_in">Array</span>.prototype.push.apply(consoantes, vogais);</span><br><span class="line"><span class="built_in">console</span>.log(consoantes); <span class="comment">// Array [ 'b', 'c', 'd', 'a', 'e', 'i', 'o', 'u' ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6</span></span><br><span class="line"><span class="keyword">var</span> vogais = [<span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'i'</span>, <span class="string">'o'</span>, <span class="string">'u'</span>];</span><br><span class="line"><span class="keyword">var</span> consoantes = [<span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>];</span><br><span class="line">consoantes.push(...vogais);</span><br><span class="line"><span class="built_in">console</span>.log(consoantes); <span class="comment">// Array [ 'b', 'c', 'd', 'a', 'e', 'i', 'o', 'u' ]</span></span><br></pre></td></tr></table></figure></div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/ecmascript"
+                    tilte="Tag">ECMAScript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/mudancas-da-es5-para-a-es6"
+                    tilte="Tag">Mudancas da es5 para a es6</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/es6"
+                    tilte="Tag">es6</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Promises com Async Await</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Promises com Async Await</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2017-08-27" 
+                title="Puclicado em 27 ago 2017"
+                itemprop="datePublished">27 ago 17 22h 57m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <h2 id="Comecando"><a href="#Comecando" class="headerlink" title="Começando"></a>Começando</h2><p>Para este exemplo usarei a api do IBGE que irá me retornar os 20 nomes mais comuns do Brasil.<br>Todos os exemplos abaixo podem ser testados colando o bloco de codigo inteiro no console.<br>Não realize os testes em site com SSL você tera problemas de Content Security Policy ou CrossOrigin.</p>
+<p>Exemplos<br>-</p>
+<h5 id="Apesar-de-async-await-ter-chegado-apenas-na-es8-ECMAScript-8-grande-parte-dos-exemplos-abaixo-estao-usando-sintax-incluida-na-es6-ECMAScript-6-se-ainda-nao-viu-as-implementacoes-recomendo-muscle-fortemente-que-leia-As-diferencas-da-es5-para-a-es6"><a href="#Apesar-de-async-await-ter-chegado-apenas-na-es8-ECMAScript-8-grande-parte-dos-exemplos-abaixo-estao-usando-sintax-incluida-na-es6-ECMAScript-6-se-ainda-nao-viu-as-implementacoes-recomendo-muscle-fortemente-que-leia-As-diferencas-da-es5-para-a-es6" class="headerlink" title="Apesar de async/await ter chegado apenas na es8 (ECMAScript 8), grande parte dos exemplos abaixo estão usando sintax incluida na es6 (ECMAScript 6) se ainda não viu as implementações recomendo :muscle: fortemente que leia As diferenças da es5 para a es6"></a>Apesar de async/await ter chegado apenas na <a href="https://www.ecma-international.org/ecma-262/" target="_blank" rel="noopener">es8 (ECMAScript 8)</a>, grande parte dos exemplos abaixo estão usando sintax incluida na <a href="http://www.ecma-international.org/ecma-262/6.0/" target="_blank" rel="noopener">es6 (ECMAScript 6)</a> se ainda não viu as implementações recomendo :muscle: fortemente que leia <a href="/mudancas-da-es5-para-a-es6">As diferenças da es5 para a es6</a></h5><p>#####</p>
+<h5 id="Promises"><a href="#Promises" class="headerlink" title="Promises"></a>Promises</h5><ol>
+<li><p>Uma das formas mais comum de se usar promises é separando os callbacks da promise cada função receber o callback da sua anterior, realiza a logica e retorna para proxima. Se desejar tratar os erros você precisara de dois rejects e um catch ao fim</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// funcao que recebe o json com os 20 nomes mais comuns e exibe no console</span></span><br><span class="line">  <span class="keyword">const</span> showJson = <span class="function">(<span class="params">json</span>) =&gt;</span> &#123;</span><br><span class="line">    json[<span class="number">0</span>].res.forEach(<span class="function"><span class="params">element</span> =&gt;</span> <span class="built_in">console</span>.log(element.ranking, element.nome));</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// callback que recebe o retorno do request quando finalizado</span></span><br><span class="line">  <span class="keyword">const</span> callback = <span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> response.json();</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// request usando thens sequenciais</span></span><br><span class="line">  fetch(<span class="string">'http://servicodados.ibge.gov.br/api/v2/censos/nomes/ranking'</span>)</span><br><span class="line">    .then(callback)</span><br><span class="line">    .then(showJson);</span><br><span class="line"></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Outra forma de obter o mesmo resultado é usar as promises engrenando uma promise dentro da outra. Para tratar possiveis erros no request você precisara de dois rejects, varios thrwos, e um catch ou varios catchs </p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// request usando um then</span></span><br><span class="line"> fetch(<span class="string">'http://servicodados.ibge.gov.br/api/v2/censos/nomes/ranking'</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">response</span> =&gt;</span> &#123; </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// funcao para transformar o response em json</span></span><br><span class="line">    response.json()</span><br><span class="line">      .then(<span class="function"><span class="params">json</span> =&gt;</span> &#123; </span><br><span class="line">      </span><br><span class="line">        <span class="comment">// exibindo os 20 nomes mais comuns e exibe no console</span></span><br><span class="line">        json[<span class="number">0</span>].res.forEach(<span class="function"><span class="params">element</span> =&gt;</span> <span class="built_in">console</span>.log(element.ranking, element.nome));</span><br><span class="line">        </span><br><span class="line">      &#125;);</span><br><span class="line">      </span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h5 id="Async-Await"><a href="#Async-Await" class="headerlink" title="Async/Await"></a>Async/Await</h5><ol>
+<li>Usando variáveis sem tratar o retorno do request</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// request usando retornando diretamente na variavel</span></span><br><span class="line">  <span class="keyword">const</span> response = <span class="keyword">await</span> (fetch(<span class="string">'http://servicodados.ibge.gov.br/api/v2/censos/nomes/ranking'</span>));	</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// funcao para transformar o response em json</span></span><br><span class="line">  <span class="keyword">const</span> json = <span class="keyword">await</span> (response.json());</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// exibindo os 20 nomes mais comuns e exibe no console</span></span><br><span class="line">  json[<span class="number">0</span>].res.forEach(<span class="function"><span class="params">element</span> =&gt;</span> <span class="built_in">console</span>.log(element.ranking, element.nome));</span><br><span class="line"></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Outra forma é tratar o retorno antes de seguir para o próximo passo</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// request sendo tratado antes de ser alocado na variavel </span></span><br><span class="line">  <span class="keyword">const</span> response = <span class="keyword">await</span> (fetch(<span class="string">'http://servicodados.ibge.gov.br/api/v2/censos/nomes/ranking'</span>)</span><br><span class="line">    .then(<span class="function"><span class="params">response</span> =&gt;</span> &#123; <span class="keyword">return</span> response; &#125;));</span><br><span class="line">	</span><br><span class="line">  <span class="comment">// funcao para transformar o response em json sendo tratado</span></span><br><span class="line">  <span class="keyword">const</span> json = <span class="keyword">await</span> (response.json()</span><br><span class="line">    .then(<span class="function"><span class="params">json</span> =&gt;</span> &#123; <span class="keyword">return</span> json; &#125;));</span><br><span class="line">	</span><br><span class="line">  <span class="comment">// exibindo os 20 nomes mais comuns e exibe no console</span></span><br><span class="line">  json[<span class="number">0</span>].res.forEach(<span class="function"><span class="params">element</span> =&gt;</span> <span class="built_in">console</span>.log(element.ranking, element.nome));</span><br><span class="line">  </span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Uma outra forma que tambem é interessante seria não travar o processamento de todo método apenas os necessários</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// callback assincrona que só executa o forEach quando o retorno é obitido</span></span><br><span class="line">  <span class="keyword">const</span> callback = <span class="keyword">async</span> (response) =&gt; &#123;</span><br><span class="line">    <span class="keyword">await</span>( <span class="keyword">await</span> (response.json()))[<span class="number">0</span>].res.forEach(<span class="function"><span class="params">element</span> =&gt;</span> <span class="built_in">console</span>.log(element.ranking, element.nome));</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// request usando then com callback assincrono</span></span><br><span class="line">  fetch(<span class="string">'http://servicodados.ibge.gov.br/api/v2/censos/nomes/ranking'</span>)</span><br><span class="line">    .then(callback);</span><br><span class="line">  </span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+</div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/ecmascript"
+                    tilte="Tag">ECMAScript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/promises"
+                    tilte="Tag">Promises</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>

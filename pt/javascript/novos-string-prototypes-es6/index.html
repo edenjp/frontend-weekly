@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Novos String.prototypes es6</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Novos String.prototypes es6</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2017-08-27" 
+                title="Puclicado em 27 ago 2017"
+                itemprop="datePublished">27 ago 17 22h 57m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <p>Na classe string temos 4 novos metodos que podem melhorar a sintax são eles:</p>
+<ol>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.repeat" target="_blank" rel="noopener">repeat</a> = Para repetir a string n vezes.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="built_in">Array</span>(<span class="number">4</span>).join(<span class="string">'abc'</span>); <span class="comment">// abcabcabc</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6</span></span><br><span class="line"><span class="string">'abc'</span>.repeat(<span class="number">3</span>);      <span class="comment">// abcabcabc</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.startswith" target="_blank" rel="noopener">startsWith</a> = Verifica se a string inicia ou contem o parametro passado em apartir de determinada posicao.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="string">'abcdef'</span>.indexOf(<span class="string">'abc'</span>) === <span class="number">0</span>; <span class="comment">// true </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6</span></span><br><span class="line"><span class="string">'abcdef'</span>.startsWith(<span class="string">'abc'</span>);    <span class="comment">// true </span></span><br><span class="line"><span class="string">'abcdef'</span>.startsWith(<span class="string">'bcd'</span>, <span class="number">1</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.endswith" target="_blank" rel="noopener">endsWith</a> = Verifica se a string inicia ou contem o parametro passado em apartir de determinada posicao.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="string">'abcdef'</span>.indexOf(<span class="string">'cde'</span>) === (<span class="number">5</span> - <span class="string">'cde'</span>.length); <span class="comment">// true </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6</span></span><br><span class="line"><span class="string">'abcdef'</span>.endsWith(<span class="string">'def'</span>) ;    <span class="comment">// true </span></span><br><span class="line"><span class="string">'abcdef'</span>.endsWith(<span class="string">'cde'</span>, <span class="number">5</span>);  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.includes" target="_blank" rel="noopener">includes</a> = Verifica se a string contem o parametro passado em determinada posição.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="string">'abcdef'</span>.indexOf(<span class="string">'cde'</span>) !== <span class="number">-1</span>; <span class="comment">// true </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6</span></span><br><span class="line"><span class="string">'abcdef'</span>.includes(<span class="string">'def'</span>);       <span class="comment">// true </span></span><br><span class="line"><span class="string">'abcdef'</span>.includes(<span class="string">'cde'</span>, <span class="number">2</span>);    <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/ecmascript"
+                    tilte="Tag">ECMAScript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/mudancas-da-es5-para-a-es6"
+                    tilte="Tag">Mudancas da es5 para a es6</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/es6"
+                    tilte="Tag">es6</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Novidades da es7</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Novidades da es7</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2017-09-02" 
+                title="Puclicado em 2 set 2017"
+                itemprop="datePublished">02 set 17 03h 53m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <p>Novidades da <a href="http://www.ecma-international.org/ecma-262/7.0/" target="_blank" rel="noopener">es7(ECMAScript 7)</a> veja tambem oque ja foi implementado na grande implementação da <a href="http://www.ecma-international.org/ecma-262/6.0/" target="_blank" rel="noopener">es6(ECMAScript 6)</a> lendo <a href="/pt/Javascript/Mudancas-da-es5-para-a-es6">Mudanças da es5 para a es6</a></p>
+<h3 id="Spread-para-objetos"><a href="#Spread-para-objetos" class="headerlink" title="Spread para objetos"></a>Spread para objetos</h3><p>O operador spread que era usado no es6 para array agora pode ser usado para objetos</p>
+<blockquote>
+<p>se não ainda não tinha visto o spread em array recomendo fortemente que leia <a href="pt/Javascript/Oque-e-o-spread">Spread</a></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es6 </span></span><br><span class="line"><span class="keyword">let</span> &#123;bracos, pernas&#125; = &#123;<span class="attr">bracos</span>: <span class="string">'arms'</span>, <span class="attr">pernas</span>: <span class="string">'legs'</span>, <span class="attr">joelho</span>: <span class="string">'knee'</span>, <span class="attr">pe</span>: <span class="string">'foot'</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(bracos); <span class="comment">// arms</span></span><br><span class="line"><span class="built_in">console</span>.log(pernas); <span class="comment">// legs</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es7</span></span><br><span class="line"><span class="keyword">let</span> &#123;bracos, ...pernas&#125; = &#123; <span class="attr">bracos</span>: <span class="string">'arms'</span>, <span class="attr">pernas</span>: <span class="string">'legs'</span>, <span class="attr">joelho</span>: <span class="string">'knee'</span>, <span class="attr">pe</span>: <span class="string">'foot'</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(cabeca); <span class="comment">// head</span></span><br><span class="line"><span class="built_in">console</span>.log(bracos); <span class="comment">// arms</span></span><br><span class="line"><span class="built_in">console</span>.log(pernas); <span class="comment">// Object &#123; pernas: 'legs', joelho: 'knee', pe: 'foot' &#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Pow"><a href="#Pow" class="headerlink" title="Pow"></a>Pow</h3><p>Realizar potencializaçao</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">2</span>);  <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">4</span>);  <span class="comment">// 16</span></span><br></pre></td></tr></table></figure>
+</div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/ecmascript"
+                    tilte="Tag">ECMAScript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/es7"
+                    tilte="Tag">es7</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Descobrindo o Symbol</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Descobrindo o Symbol</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2017-12-04" 
+                title="Puclicado em 4 dez 2017"
+                itemprop="datePublished">04 dez 17 22h 10m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <h2 id="Entendendo"><a href="#Entendendo" class="headerlink" title="Entendendo"></a>Entendendo</h2><p>O <a href="https://tc39.github.io/proposal-Symbol-description/" target="_blank" rel="noopener">symbol</a> é um tipo de dado primitivo e imutável e pode ser usado como um identificador unico para propriedades de objeto, sem interferência das propriedades ja existentes objeto.</p>
+<h3 id="Instanciando"><a href="#Instanciando" class="headerlink" title="Instanciando"></a>Instanciando</h3><p>Symbol não contem contructor por isso não precisa do new<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Pode ser instanciado em branco</span></span><br><span class="line"><span class="keyword">var</span> symbol = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="comment">// Ou passando sua identificão</span></span><br><span class="line"><span class="keyword">var</span> symbol = <span class="built_in">Symbol</span>(<span class="string">'foo'</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="E-realmente-unico"><a href="#E-realmente-unico" class="headerlink" title="É realmente unico ?"></a>É realmente unico ?</h3><p>Veja você mesmo<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> key = <span class="string">'descricao'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">Symbol</span>(key);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">Symbol</span>(key);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a === b );         <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log( a == b );          <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Object</span>.is(a, b) ); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
+<p>Legal não é mesmo ?</p>
+<h4 id="Oque-ha-de-bom"><a href="#Oque-ha-de-bom" class="headerlink" title="Oque ha de bom ?"></a>Oque ha de bom ?</h4><p>Por gerar um tipo unico mesmo com valores iguais ajuda a evitar conflitos em objetos exemplo:</p>
+<p>Exemplo com key simples de string</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> key = <span class="string">'chave'</span>;</span><br><span class="line"></span><br><span class="line">a[key] = <span class="number">1</span>;</span><br><span class="line">a[key] = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// Object &#123; chave: 2 &#125;</span></span><br></pre></td></tr></table></figure>
+<p>Exemplo com Symbol</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> key = <span class="string">'chave'</span>;</span><br><span class="line"><span class="keyword">var</span> x = <span class="built_in">Symbol</span>(key);</span><br><span class="line"><span class="keyword">var</span> y = <span class="built_in">Symbol</span>(key);</span><br><span class="line"></span><br><span class="line">b[x] = <span class="number">1</span>;</span><br><span class="line">b[y] = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// Object &#123; Symbol(chave): 1, Symbol(chave): 2 &#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-symbol.for" target="_blank" rel="noopener">for</a> O <strong>symbol.for</strong> busca um symbol da chave recebida se encontrado ele traz a referencia da mesma, se não ele cria um novo symbol</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> key = <span class="string">'chave'</span>;</span><br><span class="line"><span class="keyword">var</span> symbol = <span class="built_in">Symbol</span>.for(key);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Symbol</span>.for(key) === symbol ); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-symbol.keyfor" target="_blank" rel="noopener">keyFor</a>  O <strong>symbol.keyFor</strong> retorna a key do symbol passado como parametro.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> key = <span class="string">'chave'</span>;</span><br><span class="line"><span class="keyword">var</span> symbol = <span class="built_in">Symbol</span>.for(key);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Symbol</span>.keyFor(symbol) ); <span class="comment">// "chave"</span></span><br></pre></td></tr></table></figure>
+</div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/ecmascript"
+                    tilte="Tag">ECMAScript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/mudancas-da-es5-para-a-es6"
+                    tilte="Tag">Mudancas da es5 para a es6</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/es6"
+                    tilte="Tag">es6</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>

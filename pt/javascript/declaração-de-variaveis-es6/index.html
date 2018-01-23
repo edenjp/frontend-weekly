@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Declaração de variaveis es6</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Declaração de variaveis es6</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2017-09-06" 
+                title="Puclicado em 6 set 2017"
+                itemprop="datePublished">06 set 17 14h 42m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <p>Na es6 o javascript ganhou mais 2 formas de atribuir variaveis, agora temos 3 tipos de declarações usando:</p>
+<ol>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-variable-statement" target="_blank" rel="noopener">var</a> = Inicialização opcional, pode ser declarada multiplas vezes com o mesmo nome.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="params">()</span>=&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(contador); <span class="comment">// undefined</span></span><br><span class="line">  <span class="keyword">var</span> contador = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">1</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> contador = i;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i);   <span class="comment">// 1</span></span><br><span class="line">    &#125;, <span class="number">100</span>);</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="built_in">console</span>.log(i);       <span class="comment">// 1</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<ol>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-let-and-const-declarations" target="_blank" rel="noopener">let</a> = Inicialização opcional, faz parte apenas do bloco onde é declarada, não é hosted.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="params">()</span>=&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(contador); <span class="comment">// ReferenceError: can't access lexical declaration `contador' before initialization</span></span><br><span class="line">  <span class="keyword">let</span> contador = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">let</span> contador = i;		</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i);   <span class="comment">// 0</span></span><br><span class="line">    &#125;, <span class="number">100</span>);</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="built_in">console</span>.log(i);       <span class="comment">// ReferenceError: i não está definido</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<ol>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-let-and-const-declarations" target="_blank" rel="noopener">const</a> = Variavel apenas para leitura, não pode declarar uma função ou variável com o mesmo nome no mesmo escopo tambem não é hoisted.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="params">()</span>=&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(contador); <span class="comment">// ReferenceError: can't access lexical declaration `contador' </span></span><br><span class="line">  <span class="keyword">const</span> contador = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">1</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> contador = i;   <span class="comment">// SyntaxError: redeclaration of const contador</span></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i);   <span class="comment">// 1</span></span><br><span class="line">    &#125;, <span class="number">100</span>);</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="built_in">console</span>.log(i);  </span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/ecmascript"
+                    tilte="Tag">ECMAScript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/mudancas-da-es5-para-a-es6"
+                    tilte="Tag">Mudancas da es5 para a es6</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/es6"
+                    tilte="Tag">es6</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>

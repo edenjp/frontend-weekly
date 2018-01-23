@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Novidades da es8</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Novidades da es8</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2017-09-12" 
+                title="Puclicado em 12 set 2017"
+                itemprop="datePublished">12 set 17 23h 45m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <p>Novidades da <a href="http://www.ecma-international.org/ecma-262/" target="_blank" rel="noopener">es8(ECMAScript 8)</a> para acompanhar as outras implementações você tambem pode ler <a href="/novidades-da-es7">Novidades da es7 (EcmaScript 7)</a></p>
+<h2 id="Strings"><a href="#Strings" class="headerlink" title="Strings"></a>Strings</h2><p>Temos dois novos metodos de busca que ajudaram a melhorar a sintax</p>
+<ol>
+<li><a href="http://www.ecma-international.org/ecma-262/#sec-string.prototype.padstart" target="_blank" rel="noopener">padStart</a> = Completa um comprimento definido para a string preenchendo o começo com o caracter passado no parametro ou espaços.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'6'</span>.padStart(<span class="number">4</span>);      <span class="comment">// "   -"</span></span><br><span class="line"><span class="string">'-'</span>.padStart(<span class="number">4</span>, <span class="string">'6'</span>); <span class="comment">// "666-"</span></span><br><span class="line"><span class="string">'-'</span>.padStart(<span class="number">1</span>, <span class="string">'6'</span>); <span class="comment">// "-"</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><a href="http://www.ecma-international.org/ecma-262/#sec-string.prototype.padend" target="_blank" rel="noopener">padEnd</a> = Completa um comprimento definido para a string preenchendo o final com o caracter passado no parametro ou espaços.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'6'</span>.padEnd(<span class="number">4</span>);      <span class="comment">// "-   "</span></span><br><span class="line"><span class="string">'-'</span>.padEnd(<span class="number">4</span>, <span class="string">'6'</span>); <span class="comment">// "-666"</span></span><br><span class="line"><span class="string">'-'</span>.padEnd(<span class="number">1</span>, <span class="string">'6'</span>); <span class="comment">// "-"</span></span><br></pre></td></tr></table></figure>
+<p>Objects<br>=</p>
+<ol>
+<li><a href="http://www.ecma-international.org/ecma-262/#sec-object.values" target="_blank" rel="noopener">values</a> = Semelhante ao <strong>Object.keys</strong> só que ao inves de retornar um array com os nomes das propriedades este retorna um array com os valores.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pessoa = &#123; <span class="attr">nome</span>: <span class="string">'Marcos'</span>, <span class="attr">idade</span>: <span class="number">19</span>, <span class="attr">proficao</span>: <span class="string">'front-end'</span> &#125;;</span><br><span class="line"><span class="built_in">Object</span>.keys(pessoa);    <span class="comment">// Array [ "nome", "idade", "proficao"]</span></span><br><span class="line"><span class="built_in">Object</span>.values(pessoa);  <span class="comment">// Array [ "Marcos", 19, "front-end"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// se as keys forem numericas é retornado em ordem numerica</span></span><br><span class="line"><span class="keyword">const</span> vogais = &#123; <span class="number">1</span>:<span class="string">'e'</span>, <span class="number">0</span>:<span class="string">'a'</span>, <span class="number">2</span>:<span class="string">'i'</span>, <span class="number">4</span>:<span class="string">'u'</span>, <span class="number">3</span>:<span class="string">'o'</span> &#125;;</span><br><span class="line"><span class="built_in">Object</span>.values(vogais);  <span class="comment">// Array [ 'a', 'e', 'i', 'o', 'u' ]</span></span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">2. [entries](http://www.ecma-international.org/ecma-262/#sec-object.entries) = Retorna o objeto como um array tranformando as propriedades e as key em um enumerable.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="keyword">const</span> pessoa = &#123; <span class="attr">nome</span>: <span class="string">'Marcos'</span>, <span class="attr">idade</span>: <span class="number">19</span>, <span class="attr">proficao</span>: <span class="string">'front-end'</span> &#125;;</span><br><span class="line"><span class="built_in">Object</span>.entries(pessoa); <span class="comment">// Array [ ["nome", "Marcos"], ["idade", 19], ["profisao", "front-end"] ]</span></span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Async/Await </span></span><br><span class="line"><span class="string">=</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Uma funcão async espara o retorno das promises para continuar sua execução</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&gt; Você pode entender um pouco melhor sobre Async/Await em [Promises com AsyncAwait](https://github.com/codermarcos/frontend-weekly/tree/master/javascript/promises-com-async-await)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="keyword">const</span> request = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">res, rej</span>) =&gt;</span> &#123; setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123; res(<span class="string">'request completo'</span>) &#125;,<span class="number">1000</span>) &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// es6</span></span><br><span class="line">(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> logger;</span><br><span class="line">  request.then(<span class="function">(<span class="params">done</span>)=&gt;</span> logger = done);</span><br><span class="line">  <span class="built_in">console</span>.log(logger); <span class="comment">// undefined</span></span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">// es7</span></span><br><span class="line">(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> logger;</span><br><span class="line">  <span class="keyword">await</span> request.then(<span class="function">(<span class="params">done</span>)=&gt;</span> logger = done);</span><br><span class="line">  <span class="built_in">console</span>.log(logger); <span class="comment">// request completo</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>getOwnPropertyDescriptors<br>=</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pessoa = &#123; </span><br><span class="line">  get nome() &#123; <span class="keyword">return</span> <span class="string">'Marcos'</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptors(pessoa);</span><br><span class="line"><span class="comment">// Object &#123;</span></span><br><span class="line"><span class="comment">//   nome: Object &#123;</span></span><br><span class="line"><span class="comment">//           configurable: true,</span></span><br><span class="line"><span class="comment">//           enumerable: true,</span></span><br><span class="line"><span class="comment">//           get: nome(), </span></span><br><span class="line"><span class="comment">//           set: undefined</span></span><br><span class="line"><span class="comment">//     	  &#125;       </span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure></div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/ecmascript"
+                    tilte="Tag">ECMAScript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/es8"
+                    tilte="Tag">es8</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>

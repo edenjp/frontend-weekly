@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Arrays na es6</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Arrays na es6</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2017-08-30" 
+                title="Puclicado em 30 ago 2017"
+                itemprop="datePublished">30 ago 17 00h 0m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <h2 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h2><p>Nas novidades que temos da <a href="http://www.ecma-international.org/ecma-262/5.1/" target="_blank" rel="noopener">es5(ECMAScript 5.1)</a> para a <a href="http://www.ecma-international.org/ecma-262/6.0/" target="_blank" rel="noopener">es6(ECMAScript 6)</a> referente a arrays temos dois novos metodos de busca que ajudaram a melhorar a sintax. </p>
+<blockquote>
+<p>Voçê pode encontrar mais mudaças em <a href="pt/javascript/mudancas-da-es5-para-a-es6">Mudanças da es5 para a es6</a></p>
+</blockquote>
+<ol>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.find" target="_blank" rel="noopener">find</a> = Semelhante ao filter mas retorna um unico objeto.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es5</span></span><br><span class="line">[ &#123;<span class="attr">id</span>: <span class="number">2</span>&#125;, &#123;<span class="attr">id</span>: <span class="number">10</span>&#125;, &#123;<span class="attr">id</span>: <span class="number">7</span>&#125; ].filter(<span class="function"><span class="params">x</span> =&gt;</span>  x.id === <span class="number">10</span>)[<span class="number">0</span>]; <span class="comment">// Object &#123; id: 10 &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6</span></span><br><span class="line">[ &#123;<span class="attr">id</span>: <span class="number">2</span>&#125;, &#123;<span class="attr">id</span>: <span class="number">10</span>&#125;, &#123;<span class="attr">id</span>: <span class="number">7</span>&#125; ].find(<span class="function"><span class="params">x</span> =&gt;</span>  x.id === <span class="number">10</span>);      <span class="comment">// Object &#123; id: 10 &#125;</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.findindex" target="_blank" rel="noopener">findIndex</a> = Retorna o index do primeiro objeto encontrado no filter.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="keyword">var</span> index = <span class="number">-1</span>;</span><br><span class="line">[ &#123;<span class="attr">id</span>: <span class="number">2</span>&#125;, &#123;<span class="attr">id</span>: <span class="number">10</span>&#125;, &#123;<span class="attr">id</span>: <span class="number">7</span>&#125; ].forEach(<span class="function">(<span class="params">element, i</span>) =&gt;</span> &#123; </span><br><span class="line">  <span class="keyword">if</span>(element.id === <span class="number">10</span> &amp;&amp; index === <span class="number">-1</span>) index = i; </span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(index);                                          <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6</span></span><br><span class="line">[ &#123;<span class="attr">id</span>: <span class="number">2</span>&#125;, &#123;<span class="attr">id</span>: <span class="number">10</span>&#125;, &#123;<span class="attr">id</span>: <span class="number">7</span>&#125; ].findIndex(<span class="function"><span class="params">x</span> =&gt;</span> x.id === <span class="number">10</span>); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+</div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/ecmascript"
+                    tilte="Tag">ECMAScript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/mudancas-da-es5-para-a-es6"
+                    tilte="Tag">Mudancas da es5 para a es6</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/es6"
+                    tilte="Tag">es6</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>

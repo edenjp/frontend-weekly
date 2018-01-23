@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Comparando no Javascript</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Comparando no Javascript</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2017-10-21" 
+                title="Puclicado em 21 out 2017"
+                itemprop="datePublished">21 out 17 02h 58m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <p>Listei alguns laços de repetição e seus funcionamentos.</p>
+<ul>
+<li><a href="">for</a> Loop default de contandor</li>
+</ul>
+<blockquote>
+<p>for é o loop mais flexisivel e performatico quando comparado com os seguintes</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> letras = [<span class="string">'a'</span>, <span class="string">'b'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &gt; letras.length; i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);         <span class="comment">// 0, 1</span></span><br><span class="line">    <span class="built_in">console</span>.log(letras[i]); <span class="comment">// 'a', 'b'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="">for …in</a> Loop percorre o array retornando o o nome de cada elemento tambem pode se usado em objetos</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> letras = [<span class="string">'a'</span>, <span class="string">'b'</span>]; <span class="comment">// Quando o array é simples ele retorna o numero do de index do atual elemento</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> l <span class="keyword">in</span> letras) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(l);         <span class="comment">// 0, 1</span></span><br><span class="line">    <span class="built_in">console</span>.log(letras[l]); <span class="comment">// 'a', 'b'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> objeto = &#123; <span class="attr">a</span>: <span class="string">'vogal'</span>, <span class="attr">b</span>: <span class="string">'consoante'</span> &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> o <span class="keyword">in</span> objeto) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(o);         <span class="comment">// a, b</span></span><br><span class="line">    <span class="built_in">console</span>.log(objeto[v]); <span class="comment">// 'vogal', 'consoante'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="">for …of</a> Loop percorre o array retornando o valor do elemento</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> letras = [<span class="string">'a'</span>, <span class="string">'b'</span>]; </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> l <span class="keyword">of</span> letras) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(l); <span class="comment">// 'a', 'b'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="">while</a> Loop generico executa prieiro o teste depois executa a logica</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> alfabeto = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (alfabeto.length % <span class="number">2</span> === <span class="number">0</span>) &#123;</span><br><span class="line">    alfabeto.pop();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(alfabeto); <span class="comment">// Array [ "a", "b", "c" ]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="">do …while</a> Loop generico executa a logica primeiro depois realiza o teste</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> alfabeto = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    alfabeto.pop();</span><br><span class="line">&#125; <span class="keyword">while</span> (alfabeto.length % <span class="number">2</span> === <span class="number">0</span>) </span><br><span class="line"><span class="built_in">console</span>.log(alfabeto); <span class="comment">// Array [ "a" ]</span></span><br></pre></td></tr></table></figure>
+<h2 id="Array-prototype"><a href="#Array-prototype" class="headerlink" title="Array.prototype"></a>Array.prototype</h2><ul>
+<li><a href="">foreach</a> Loop percorre o array retornando o elemento podendo exibir um index ou não.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> letras = [<span class="string">'a'</span>, <span class="string">'b'</span>];</span><br><span class="line"></span><br><span class="line">letras.foreach(<span class="function">(<span class="params">letra, i</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);         <span class="comment">// 0, 1</span></span><br><span class="line">    <span class="built_in">console</span>.log(letra); <span class="comment">// 'a', 'b'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="">map</a> Loop que executa a logica diretamente no objeto retornando um novo array.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> tabuada = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> dois = tabuada.map(<span class="function">(<span class="params">numero</span>) =&gt;</span> numero * <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(dois); <span class="comment">// Array [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="">filter</a> Loop para filtrar arrays.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numeros = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pares = numeros.filter(<span class="function">(<span class="params">numero</span>) =&gt;</span> numero % <span class="number">2</span> === <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pares); <span class="comment">// Array [ 2, 4, 6, 8, 10 ]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="">every</a> Loop para verificar valor no array inteiro retornando true ou false.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span> ].every(<span class="function">(<span class="params">numero</span>) =&gt;</span> numero % <span class="number">2</span> === <span class="number">0</span>);    <span class="comment">// true</span></span><br><span class="line">[ <span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span> ].every(<span class="function">(<span class="params">numero</span>) =&gt;</span> numero % <span class="number">2</span> === <span class="number">0</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="">sort</a> Loop para ordenar array inteiro com funcao que deve retornar se o array sobe 1 ou desce 1 em sua posição ou permanece com 0.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> decrescente = [ <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span> ].sort(<span class="function">(<span class="params">v1, v2</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (v1 &gt; v2) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (v2 &gt; v1) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;);   </span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(decrescente); <span class="comment">// Array [ 10, 8, 6, 4, 2 ]</span></span><br></pre></td></tr></table></figure>
+</div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/loops"
+                    tilte="Tag">Loops</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>

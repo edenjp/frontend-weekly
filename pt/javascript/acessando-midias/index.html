@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Acessando midias</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Acessando midias</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2017-09-30" 
+                title="Puclicado em 30 set 2017"
+                itemprop="datePublished">30 set 17 19h 27m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <h2 id="mediaDevices-e-getUserMedia"><a href="#mediaDevices-e-getUserMedia" class="headerlink" title="mediaDevices e getUserMedia"></a>mediaDevices e getUserMedia</h2><p>Primeiro monte uma verificação para ver se o browser suporta esta função.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Verificando se o navegador contem o atributo mediaDevices e getUserMedia</span></span><br><span class="line"><span class="keyword">if</span> (<span class="string">'mediaDevices'</span> <span class="keyword">in</span> navigator &amp;&amp; <span class="string">'getUserMedia'</span> <span class="keyword">in</span> navigator.mediaDevices) &#123;</span><br><span class="line"><span class="comment">// Seu codigo deve vir aqui ...    </span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">'Este navegador não suporta esta ação!'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p><a href="https://w3c.github.io/mediacapture-main/#dom-mediadevices-enumeratedevices(" target="_blank" rel="noopener">enumerateDevices</a>) Retorna um array com informações de todas as dispositivos de input e output disponiveis para o browser.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">navigator.mediaDevices.enumerateDevices()</span><br><span class="line">    .then(<span class="function"><span class="params">devices</span> =&gt;</span> <span class="built_in">console</span>.log(devices)); <span class="comment">// [...] MediaDeviceInfo</span></span><br><span class="line">                                            <span class="comment">//      0: &#123;</span></span><br><span class="line">                                            <span class="comment">//          deviceId: string, // identifição do device é renovado a cada sessão</span></span><br><span class="line">                                            <span class="comment">//          groupId: string,  // identifição do grupo do device, um grupo pode ser por exemplo um monitor com camera</span></span><br><span class="line">                                            <span class="comment">//          kind: string,     // tipo do device  por exemplo audiooutput, videoinput etc</span></span><br><span class="line">                                            <span class="comment">//          label: string     // descricao do device</span></span><br><span class="line">                                            <span class="comment">//      &#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://www.w3.org/TR/screen-capture/#idl-def-NavigatorUserMedia" target="_blank" rel="noopener">getUserMidia</a> Solicita permissão para acessar dispositivos, passando como parametro as midias e suas configurações, retornara stream.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> params = &#123;</span><br><span class="line">    audio: <span class="literal">true</span>, <span class="comment">// acessar audio</span></span><br><span class="line">    video: <span class="literal">true</span>  <span class="comment">// acessar video</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// or</span></span><br><span class="line"><span class="keyword">const</span> optional = &#123;</span><br><span class="line">    audio: <span class="literal">true</span>, <span class="comment">// acessar audio</span></span><br><span class="line">    video: &#123; </span><br><span class="line">        facingMode: <span class="string">"user"</span> <span class="comment">// camera frontal</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">navigator.mediaDevices.getUserMedia(params)</span><br><span class="line">    .then(<span class="function"><span class="params">stream</span> =&gt;</span> <span class="built_in">console</span>.log(stream)); <span class="comment">// LocalMediaStream &#123;</span></span><br><span class="line">                                            <span class="comment">//          active: boolean,     // Esta ativo ou não</span></span><br><span class="line">                                            <span class="comment">//          currentTime: string, // Hora atual</span></span><br><span class="line">                                            <span class="comment">//          id: string,          // identificão da stream</span></span><br><span class="line">                                            <span class="comment">//          onaddtrack: null     // callback pode ser passado no getUserMedia</span></span><br><span class="line">                                            <span class="comment">//      &#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Fazendo-a-magica-acontecer"><a href="#Fazendo-a-magica-acontecer" class="headerlink" title="Fazendo a magica acontecer"></a>Fazendo a magica acontecer</h3><p>Acessando a camera e passando para o elemento video a stream no atributo srcObject.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">      (<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">const</span> video = <span class="built_in">document</span>.querySelector(<span class="string">'video'</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">          <span class="keyword">const</span> failed = <span class="function"><span class="params">erro</span> =&gt;</span> alert(erro);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">          <span class="keyword">const</span> finish = <span class="function"><span class="params">stream</span> =&gt;</span> video.srcObject = stream;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">          <span class="keyword">const</span> params = &#123;</span></span><br><span class="line"><span class="javascript">              video: <span class="literal">true</span>  </span></span><br><span class="line"><span class="undefined">          &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">          <span class="keyword">if</span> (<span class="string">'mediaDevices'</span> <span class="keyword">in</span> navigator &amp;&amp; <span class="string">'getUserMedia'</span> <span class="keyword">in</span> navigator.mediaDevices) &#123;</span></span><br><span class="line"><span class="undefined">              navigator.mediaDevices.getUserMedia(params)</span></span><br><span class="line"><span class="undefined">                  .then(finish)</span></span><br><span class="line"><span class="undefined">                  .then(video.play())</span></span><br><span class="line"><span class="undefined">                  .catch(failed);</span></span><br><span class="line"><span class="javascript">          &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">              alert(<span class="string">'Este navegador não suporta esta ação!'</span>);</span></span><br><span class="line"><span class="undefined">          &#125;</span></span><br><span class="line"><span class="undefined">      &#125;)();</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+</div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/midias"
+                    tilte="Tag">Midias</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>
