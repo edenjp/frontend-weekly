@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Functions vs Arrow-functions</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Functions vs Arrow-functions</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2018-01-23" 
+                title="Puclicado em 23 jan 2018"
+                itemprop="datePublished">23 jan 18 15h 40m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <h2 id="Entendendo-melhor"><a href="#Entendendo-melhor" class="headerlink" title="Entendendo melhor"></a>Entendendo melhor</h2><p>A <a href="http://www.ecma-international.org/ecma-262/6.0/#sec-arrow-function-definitions" target="_blank" rel="noopener">Arrow-Funciton</a> incluida na <a href="http://frontend-weekly.codermarcos.com/pt/javascript/mudancas-da-es5-para-a-es6/">es6</a> não é apenas uma sugar syntax de <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-function-definitions" target="_blank" rel="noopener">Function</a> as duas sintax tem suas peculiaridades abaixo listei algumas delas:</p>
+<ul>
+<li><a href="">Hoisting</a> Usando uma função não nomeada “anonymous-function” ela não é hoisted, como arrow functions são apenas anonimas ou seja só podem ser atribuidas a uma variavel não é possivel usalas antes de sua declaração. Segue exemplo:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">falarNome(<span class="string">'Marcos'</span>); <span class="comment">// 'Marcos'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Traditional function</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">falarNome</span>(<span class="params">nome</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(nome);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">falarIdade(<span class="number">19</span>); <span class="comment">// Exception: TypeError: falarIdade is not a function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Anonimous function</span></span><br><span class="line"><span class="keyword">var</span> falarIdade = <span class="function"><span class="keyword">function</span>(<span class="params">idade</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(idade);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">falarProfissao(<span class="string">'frontend'</span>); <span class="comment">// Exception: TypeError: falarProfissao is not a function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Arrow function</span></span><br><span class="line"><span class="keyword">var</span> falarProfissao = <span class="function"><span class="params">profissao</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(profissao);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="">Constructor</a> Uma arrow function não pode ser usada como um contructor. Segue Exemplo:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Traditional function</span></span><br><span class="line"><span class="keyword">new</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;(); <span class="comment">// Object &#123; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Arrow function</span></span><br><span class="line"><span class="keyword">new</span> (<span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;)(); <span class="comment">// TypeError: () =&gt; &#123;&#125; is not a constructor</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="">Scope</a> Arrow functions por não poder se usado como constructor isto é “ele não cria um objeto com seu proprio scopo” ele tem um <strong>this</strong> lexico, isto significa que seu escopo sera igual do contexto vinculado. Segue exemplo:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Message</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Arrow function</span></span><br><span class="line">  <span class="keyword">this</span>.mensagem = <span class="string">'Passou'</span>;</span><br><span class="line">  (<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="keyword">this</span>.mensagem))(); <span class="comment">// 'Passou'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> Message();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Message</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Traditional function</span></span><br><span class="line">  <span class="keyword">this</span>.mensagem = <span class="string">'Passou'</span>;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.mensagem);         <span class="comment">// undefined</span></span><br><span class="line">  &#125;)();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> Message();</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="">arguments</a> Arrow functions não contem arguments pelo mesmo fato do anterior <strong>arguments</strong> tambem é lexico ou seja seu escopo sera igual do contexto vinculado. Segue exemplo:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Traditional function</span></span><br><span class="line"><span class="keyword">var</span> crescente = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>).sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a &gt; b)</span><br><span class="line">&#125;;</span><br><span class="line">crescente(<span class="number">3</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>); <span class="comment">// Array [ 1, 2, 3, 4, 5, 6, 7, 8 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Arrow function</span></span><br><span class="line"><span class="keyword">var</span> crescente = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>).sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a &gt; b);</span><br><span class="line">&#125;</span><br><span class="line">crescente(<span class="number">3</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>); <span class="comment">// Exception: ReferenceError: arguments is not defined</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>uma solução para usar arrow function neste caso seria usar<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> crescente = <span class="function">(<span class="params">...<span class="built_in">arguments</span></span>) =&gt;</span> &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li><p><a href="">sintax</a> Arrow function alem de ter uma declaração diferente podemos omitir os conchetes quando omitidos o retorno da esspreção sera o retorno da função. Segue exemplo:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="params">nome</span> =&gt;</span> <span class="string">`Nome: <span class="subst">$&#123;nome&#125;</span>`</span>)(<span class="string">'Marcos'</span>); <span class="comment">// 'Marcos'</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="params">nome</span> =&gt;</span> &#123; <span class="string">`Nome <span class="subst">$&#123;nome&#125;</span>`</span> &#125;)(<span class="string">'Marcos'</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Para retornar objetos temos que utilizar da seguinte forma</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="params">nome</span> =&gt;</span> (&#123;nome&#125;))(<span class="string">'Marcos'</span>); <span class="comment">// 'Marcos'</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="params">nome</span> =&gt;</span> &#123;nome&#125;)(<span class="string">'Marcos'</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure></div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/ecmascript"
+                    tilte="Tag">ECMAScript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/mudancas-da-es5-para-a-es6"
+                    tilte="Tag">Mudancas da es5 para a es6</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/es6"
+                    tilte="Tag">es6</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/functions"
+                    tilte="Tag">Functions</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>

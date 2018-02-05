@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://frontend-weekly.codermarcos.com/"/>
-  <updated>2018-01-23T13:22:52.022Z</updated>
+  <updated>2018-02-05T11:55:23.537Z</updated>
   <id>http://frontend-weekly.codermarcos.com/</id>
   
   <author>
@@ -17,15 +17,67 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>O estranho NaN</title>
+    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/o-estranho-nan/"/>
+    <id>http://frontend-weekly.codermarcos.com/pt/javascript/o-estranho-nan/</id>
+    <published>2018-02-05T11:35:45.000Z</published>
+    <updated>2018-02-05T11:55:23.537Z</updated>
+    
+    <summary type="html">
+    
+      Entendendo este caso estranho de NaN ou &quot;Not a Number&quot;.
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
+    
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
+    
+      <category term="NaN" scheme="http://frontend-weekly.codermarcos.com/tags/nan/"/>
+    
+      <category term="Numbers" scheme="http://frontend-weekly.codermarcos.com/tags/numbers/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Functions vs Arrow-functions</title>
+    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/functions-vs-arrow-functions/"/>
+    <id>http://frontend-weekly.codermarcos.com/pt/javascript/functions-vs-arrow-functions/</id>
+    <published>2018-01-23T17:40:14.000Z</published>
+    <updated>2018-02-05T11:34:32.354Z</updated>
+    
+    <summary type="html">
+    
+      Entendendo melhor function e arrow function
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
+    
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
+    
+      <category term="ECMAScript" scheme="http://frontend-weekly.codermarcos.com/tags/ecmascript/"/>
+    
+      <category term="Mudancas da es5 para a es6" scheme="http://frontend-weekly.codermarcos.com/tags/mudancas-da-es5-para-a-es6/"/>
+    
+      <category term="es6" scheme="http://frontend-weekly.codermarcos.com/tags/es6/"/>
+    
+      <category term="Functions" scheme="http://frontend-weekly.codermarcos.com/tags/functions/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Como usar datalist</title>
     <link href="http://frontend-weekly.codermarcos.com/pt/html/como-usar-datalist/"/>
     <id>http://frontend-weekly.codermarcos.com/pt/html/como-usar-datalist/</id>
     <published>2018-01-13T18:36:56.000Z</published>
-    <updated>2018-01-23T13:22:52.022Z</updated>
+    <updated>2018-01-24T12:15:47.133Z</updated>
     
     <summary type="html">
     
-      Oque é o datalist e alguns case para usalo.
+      Oque é o datalist e alguns cases para usalo.
     
     </summary>
     
@@ -111,15 +163,15 @@
   </entry>
   
   <entry>
-    <title>Comparando no Javascript</title>
+    <title>Loops no Javascript</title>
     <link href="http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript/"/>
     <id>http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript/</id>
     <published>2017-10-21T04:58:04.000Z</published>
-    <updated>2018-01-23T13:22:52.023Z</updated>
+    <updated>2018-01-24T17:46:48.415Z</updated>
     
     <summary type="html">
     
-      Conhecendo melhor os laços do Javascript e suas diferentes utilidades.
+      Conhecendo melhor os laços de repetição do Javascript e suas diferentes utilidades.
     
     </summary>
     
@@ -151,52 +203,6 @@
       <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
     
       <category term="Midias" scheme="http://frontend-weekly.codermarcos.com/tags/midias/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Comparando no Javascript</title>
-    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/comparando-no-javascript/"/>
-    <id>http://frontend-weekly.codermarcos.com/pt/javascript/comparando-no-javascript/</id>
-    <published>2017-09-17T02:43:04.000Z</published>
-    <updated>2018-01-23T13:22:52.022Z</updated>
-    
-    <summary type="html">
-    
-      Aprendendo a escolher quais operadores e suas diferenças e qunado usar para qual tipo de comparação.
-    
-    </summary>
-    
-      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
-    
-    
-      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
-    
-      <category term="Comparadores" scheme="http://frontend-weekly.codermarcos.com/tags/comparadores/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Novidades da es8</title>
-    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/novidades-da-es8/"/>
-    <id>http://frontend-weekly.codermarcos.com/pt/javascript/novidades-da-es8/</id>
-    <published>2017-09-13T02:45:05.000Z</published>
-    <updated>2018-01-23T13:22:52.023Z</updated>
-    
-    <summary type="html">
-    
-      Descobrindo as novas features da es8
-    
-    </summary>
-    
-      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
-    
-    
-      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
-    
-      <category term="ECMAScript" scheme="http://frontend-weekly.codermarcos.com/tags/ecmascript/"/>
-    
-      <category term="es8" scheme="http://frontend-weekly.codermarcos.com/tags/es8/"/>
     
   </entry>
   

@@ -18,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Frontend Weekly | Mudancas da es5 para a es6</title>
+    <title>Frontend Weekly | O estranho NaN</title>
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -34,7 +34,7 @@
     <div class="main-header__background"></div>
     <div class="main-header__container">        
         <h1 class="main-header__title" itemprop="name">
-            Mudancas da es5 para a es6</h1>
+            O estranho NaN</h1>
         <p class="main-header__container__description">
             <a 
                 class="description__category" 
@@ -43,9 +43,9 @@
             <br>
             <time 
                 class="description__day" 
-                datetime="2017-08-27" 
-                title="Puclicado em 27 ago 2017"
-                itemprop="datePublished">27 ago 17 13h 42m</time>        
+                datetime="2018-02-05" 
+                title="Puclicado em 5 fev 2018"
+                itemprop="datePublished">05 fev 18 09h 35m</time>        
         </p>
     </div>
 </header>
@@ -53,16 +53,8 @@
     <div 
         class="main-content__container markdown" 
         itemprop="articleBody">
-        <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><p>Abaixo estara os links com as principais mudanças ocorridas da <a href="http://www.ecma-international.org/ecma-262/5.1/" target="_blank" rel="noopener">es5(ECMAScript 5.1)</a> para a <a href="http://www.ecma-international.org/ecma-262/6.0/" target="_blank" rel="noopener">es6(ECMAScript 6)</a> tambem conhecida com <strong>ECMAScript 2015</strong>.</p>
-<ul>
-<li><a href="/pt/javascript/arrays-na-es6-oque-mudou">Arrays na es6 oque mudou?</a></li>
-<li><a href="/pt/javascript/escrevendo-uma-classe-na-es6">Escrevendo uma classe na es6</a></li>
-<li><a href="/pt/javascript/novos-string-prototypes-es6">Novos String.prototypes es6</a></li>
-<li><a href="/pt/javascript/variaveis">Variaveis</a></li>
-<li><a href="/pt/javascript/spread">Spread</a></li>
-<li><a href="/pt/javascript/descobrindo-o-symbol">Descobrindo o Symbol</a></li>
-<li><a href="/pt/javascript/functions-vs-arrow-functions">Functions vs Arrow-Functions</a></li>
-</ul>
+        <h2 id="Entendendo"><a href="#Entendendo" class="headerlink" title="Entendendo"></a>Entendendo</h2><p><a href="http://www.ecma-international.org/ecma-262/5.1/#sec-15.1.1.1" target="_blank" rel="noopener">NaN</a>, ou “Not a Number”, é um valor especial tambem uma propriedade global usado para representar um valor irrepresentável.<br>Para <strong>obter</strong> um NaN basta realizar uma operação invalida ou usar diretamente a propriedade Global:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line">a = <span class="literal">NaN</span>; <span class="comment">// NaN</span></span><br><span class="line">a = <span class="number">0</span>/<span class="number">0</span>; <span class="comment">// NaN</span></span><br><span class="line">a = <span class="built_in">parseInt</span>(<span class="string">'letra'</span>); <span class="comment">//NaN</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Comparando-NaN"><a href="#Comparando-NaN" class="headerlink" title="Comparando NaN"></a>Comparando NaN</h3><p>Não é possivel <a href="/pt/javascript/comparando-no-javascript/">comparar</a> NaN com os operadores simples</p>
 </div>
 
             
@@ -78,18 +70,13 @@
              
                 <a 
                     class="tags__tag" 
-                    href="/tags/ecmascript"
-                    tilte="Tag">ECMAScript</a>         
+                    href="/tags/nan"
+                    tilte="Tag">NaN</a>         
              
                 <a 
                     class="tags__tag" 
-                    href="/tags/mudancas-da-es5-para-a-es6"
-                    tilte="Tag">Mudancas da es5 para a es6</a>         
-             
-                <a 
-                    class="tags__tag" 
-                    href="/tags/es6"
-                    tilte="Tag">es6</a>         
+                    href="/tags/numbers"
+                    tilte="Tag">Numbers</a>         
             
             </div>
         </section>
