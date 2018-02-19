@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    
+        <link rel="icon" href="/favicon.png">
+    
+        <meta name="robots" content="index, follow">
+    
+        <meta name="author" content="codermarcos">
+    
+        <meta name="content" content="Um pouco sobre que aprendi ou estou aprendendo sobre frontend e boas praticas.">
+    
+        <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Frontend Weekly | Porque usar Map</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body itemscope itemprop="blogPost">
+    <nav class="navbar clear">
+    <a 
+        href="/" 
+        class="navbar__title"
+        title="Go to home">
+        Frontend Weekly</a>
+</nav>
+<header class="main-header">
+    <div class="main-header__background"></div>
+    <div class="main-header__container">        
+        <h1 class="main-header__title" itemprop="name">
+            Porque usar Map</h1>
+        <p class="main-header__container__description">
+            <a 
+                class="description__category" 
+                href="/categories/javascript"
+                tilte="Categoria">javascript</a>
+            <br>
+            <time 
+                class="description__day" 
+                datetime="2018-02-18" 
+                title="Puclicado em 18 fev 2018"
+                itemprop="datePublished">18 fev 18 20h 50m</time>        
+        </p>
+    </div>
+</header>
+<main class="main-content">
+    <div 
+        class="main-content__container markdown" 
+        itemprop="articleBody">
+        <h2 id="Entendendo"><a href="#Entendendo" class="headerlink" title="Entendendo"></a>Entendendo</h2><p>O <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-map-objects" target="_blank" rel="noopener">Map</a> muito parecido com <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-object-objects" target="_blank" rel="noopener">Object</a> e o <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array-objects" target="_blank" rel="noopener">Array</a> porem possui algumas peculiaridades, que o torna mais flexivel, e util em alguns casos vejamos abaixo:</p>
+<ul>
+<li><strong>Ordem</strong> uma caracteristica muito interessante do Map é ele manter a ordem em que os elementos foram adicionados diferente do object que ordena pela chave</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">object[<span class="number">2</span>] = <span class="string">'Marcos'</span>;</span><br><span class="line">object[<span class="number">1</span>] = <span class="string">'Junior'</span>; </span><br><span class="line"><span class="built_in">console</span>.log(object); <span class="comment">// Object &#123; 1: "Junior", 2: "Marcos" &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Se realizar um loop nas chaves vera que estão em outra ordem</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">of</span> <span class="built_in">Object</span>.keys(object)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key); <span class="comment">// 1, 2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">map.set(<span class="number">2</span>, <span class="string">'Marcos'</span>);</span><br><span class="line">map.set(<span class="number">1</span>, <span class="string">'Junior'</span>); </span><br><span class="line"><span class="built_in">console</span>.log(map); <span class="comment">// Map &#123; 2 → "Marcos", 1 → "Junior" &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Realizando um loop é possivel ver que estão na ordem em que foram adicionadas</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">of</span> map.keys()) &#123; </span><br><span class="line">    <span class="built_in">console</span>.log(key); <span class="comment">// 2, 1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Chave</strong> o Map pode conter <strong>qualquer tipo como chave</strong>, diferente do Object que aceita apenas Symbol, Number e String, se recebe algo diferente ele converte para string  </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pessoa = &#123;<span class="attr">sexo</span>:<span class="string">'Masculino'</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> object = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">object[pessoa] = <span class="string">'Marcos'</span>; <span class="comment">// Object &#123; "[object Object]": "Marcos" &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Perceba que a chave foi convertida para string </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">map.set(pessoa, <span class="string">'Marcos'</span>); <span class="comment">// Map &#123; &#123;…&#125; → "Marcos" &#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Tipo de chave</strong> o Map pode conter <strong>distinguir os tipos de chaves</strong>, diferente do Object que converte para um tipo primitivo simples</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">object[<span class="string">'1'</span>] = <span class="string">'Marcos'</span>; <span class="comment">// Object &#123; 1: "Marcos" &#125;</span></span><br><span class="line">object[<span class="number">1</span>] = <span class="string">'Junior'</span>;   <span class="comment">// Object &#123; 1: "Junior" &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Perceba que a primeira chave foi convertida para inteiro fazendo com que a segunda substitui-se o valor da primeira</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">map.set(<span class="string">'1'</span>, <span class="string">'Marcos'</span>); <span class="comment">// Map &#123; "1" → "Marcos" &#125;</span></span><br><span class="line">map.set(<span class="number">1</span>, <span class="string">'Marcos'</span>); <span class="comment">// Map &#123; "1" → "Marcos", 1 → "Junior" &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// O Map mantem os dois tipos de chaves</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Deletar</strong> ao deletar um elemento do map ele retorna se esse elemento foi realmente excluido ou não. Diferente do Object que sempre retorna true</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">object.nome = <span class="string">'Marcos'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> object.nome; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object sempre retorna true quando chamamos o delete em propriedades do Object</span></span><br><span class="line"><span class="keyword">delete</span> object.nome; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">map.set(<span class="string">'nome'</span>, <span class="string">'Marcos'</span>); <span class="comment">// Map &#123; "nome" → "Marcos" &#125;</span></span><br><span class="line">map.delete(<span class="string">'nome'</span>); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Por ja ter sido removido ele não tem mais oque remover por isso retorna false</span></span><br><span class="line">map.delete(<span class="string">'nome'</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Loop</strong> é possivel executar um loop diretamente no map ao contrario do object que é preciso utilizar suas keys</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">object.nome = <span class="string">'Marcos'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">of</span> <span class="built_in">Object</span>.keys(object)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(object[key]); <span class="comment">// "Marcos"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">map.set(<span class="string">'nome'</span>, <span class="string">'Marcos'</span>); <span class="comment">// Map &#123; "nome" → "Marcos" &#125;</span></span><br><span class="line"></span><br><span class="line">map.forEach(<span class="function">(<span class="params">e</span>) =&gt;</span> <span class="built_in">console</span>.log(e)); <span class="comment">// "Marcos"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Semelhacas"><a href="#Semelhacas" class="headerlink" title="Semelhaças"></a>Semelhaças</h2><ul>
+<li><strong>Descobrir se contem a chave</strong> no Object normalmente utiliza-se hasOwnProperty no map utiliza-se apenas has </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">object.nome = <span class="string">'Marcos'</span>;</span><br><span class="line"></span><br><span class="line">object.hasOwnProperty(<span class="string">'nome'</span>);  <span class="comment">// true</span></span><br><span class="line">object.hasOwnProperty(<span class="string">'idade'</span>); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">map.set(<span class="string">'nome'</span>, <span class="string">'Marcos'</span>);</span><br><span class="line"></span><br><span class="line">map.has(<span class="string">'nome'</span>);  <span class="comment">// true</span></span><br><span class="line">map.has(<span class="string">'idade'</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Descobrir tamanho</strong> no Object normalmente utiliza-se Object.keys no map utiliza-se apenas size </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">object.nome = <span class="string">'Marcos'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.keys(object).length;  <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">map.set(<span class="string">'nome'</span>, <span class="string">'Marcos'</span>);</span><br><span class="line"></span><br><span class="line">map.size <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Limpar</strong> no Object não existe um prototype que limpe o object no map temos o clear </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">object.nome = <span class="string">'Marcos'</span>;</span><br><span class="line"></span><br><span class="line">object = &#123;&#125;;  <span class="comment">// Object &#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">map.set(<span class="string">'nome'</span>, <span class="string">'Marcos'</span>);</span><br><span class="line"></span><br><span class="line">map.clear() <span class="comment">// Map &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Pontos-importantes"><a href="#Pontos-importantes" class="headerlink" title="Pontos importantes"></a>Pontos importantes</h2><ul>
+<li><strong>Criar em branco</strong> no Map não é possivel criar um Map sem prototype difirente do Object que é possivel</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</span><br><span class="line"><span class="built_in">console</span>.log(object); <span class="comment">// Object &#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line"><span class="built_in">console</span>.log(map); <span class="comment">// Map &#123; size: 0, &lt;entries&gt;, __proto__: Object &#123;...&#125; &#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>JSON.stringify</strong> não é possivel converter um map para JSON usando JSON.stringify</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">map.set(<span class="string">'nome'</span>, <span class="string">'Marcos'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">JSON</span>.stringify(map); <span class="comment">// Object &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Ao inves de JSON.stringify utilize<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MapToJson = <span class="function">(<span class="params">map</span>) =&gt;</span> <span class="built_in">JSON</span>.stringify([...map]);</span><br><span class="line"><span class="keyword">const</span> JsonToMap = <span class="function">(<span class="params">string</span>) =&gt;</span> <span class="keyword">new</span> <span class="built_in">Map</span>(<span class="built_in">JSON</span>.parse(jsonStr));</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</div>
+
+            
+
+        <h5 class="divisor">Tags</h5>
+        <section class="tags">
+            <div class="tags__container">
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/javascript"
+                    tilte="Tag">Javascript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/ecmascript"
+                    tilte="Tag">ECMAScript</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/mudancas-da-es5-para-a-es6"
+                    tilte="Tag">Mudancas da es5 para a es6</a>         
+             
+                <a 
+                    class="tags__tag" 
+                    href="/tags/es6"
+                    tilte="Tag">es6</a>         
+            
+            </div>
+        </section>
+
+    
+</main>
+    <script src="/scripts/script.js"></script>
+    
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-106429071-2', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+</body>
+</html>

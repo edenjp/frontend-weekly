@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://frontend-weekly.codermarcos.com/"/>
-  <updated>2018-02-05T13:47:18.941Z</updated>
+  <updated>2018-02-19T12:33:27.870Z</updated>
   <id>http://frontend-weekly.codermarcos.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Porque usar Map</title>
+    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/porque-usar-map/"/>
+    <id>http://frontend-weekly.codermarcos.com/pt/javascript/porque-usar-map/</id>
+    <published>2018-02-18T23:50:56.000Z</published>
+    <updated>2018-02-19T12:33:27.870Z</updated>
+    
+    <summary type="html">
+    
+      Entendendo a utilidade do map e quando usa-lo.
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
+    
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
+    
+      <category term="ECMAScript" scheme="http://frontend-weekly.codermarcos.com/tags/ecmascript/"/>
+    
+      <category term="Mudancas da es5 para a es6" scheme="http://frontend-weekly.codermarcos.com/tags/mudancas-da-es5-para-a-es6/"/>
+    
+      <category term="es6" scheme="http://frontend-weekly.codermarcos.com/tags/es6/"/>
+    
+  </entry>
   
   <entry>
     <title>O estranho NaN</title>
@@ -125,7 +151,7 @@
     <link href="http://frontend-weekly.codermarcos.com/pt/css/conhecendo-o-currentcolor/"/>
     <id>http://frontend-weekly.codermarcos.com/pt/css/conhecendo-o-currentcolor/</id>
     <published>2017-11-21T16:57:03.000Z</published>
-    <updated>2018-01-23T13:22:52.022Z</updated>
+    <updated>2018-02-19T12:22:19.245Z</updated>
     
     <summary type="html">
     
@@ -167,7 +193,7 @@
     <link href="http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript/"/>
     <id>http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript/</id>
     <published>2017-10-21T04:58:04.000Z</published>
-    <updated>2018-01-24T17:46:48.415Z</updated>
+    <updated>2018-02-19T12:16:11.734Z</updated>
     
     <summary type="html">
     
@@ -181,28 +207,6 @@
       <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
     
       <category term="Loops" scheme="http://frontend-weekly.codermarcos.com/tags/loops/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Acessando midias</title>
-    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/acessando-midias/"/>
-    <id>http://frontend-weekly.codermarcos.com/pt/javascript/acessando-midias/</id>
-    <published>2017-09-30T22:27:05.000Z</published>
-    <updated>2018-01-23T13:22:52.022Z</updated>
-    
-    <summary type="html">
-    
-      Acessar os dispositivos de midia input e output do browser.
-    
-    </summary>
-    
-      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
-    
-    
-      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
-    
-      <category term="Midias" scheme="http://frontend-weekly.codermarcos.com/tags/midias/"/>
     
   </entry>
   
