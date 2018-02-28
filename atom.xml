@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://frontend-weekly.codermarcos.com/"/>
-  <updated>2018-02-19T12:33:27.870Z</updated>
+  <updated>2018-02-28T21:14:29.514Z</updated>
   <id>http://frontend-weekly.codermarcos.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Copiar objetos no javascript</title>
+    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/copiar-objetos-no-javascript/"/>
+    <id>http://frontend-weekly.codermarcos.com/pt/javascript/copiar-objetos-no-javascript/</id>
+    <published>2018-02-28T21:14:29.000Z</published>
+    <updated>2018-02-28T21:14:29.514Z</updated>
+    
+    <summary type="html">
+    
+      Aprendendo as diferentes maneiras de copiar no javascript
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
+    
+    
+      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
+    
+      <category term="Object" scheme="http://frontend-weekly.codermarcos.com/tags/object/"/>
+    
+  </entry>
   
   <entry>
     <title>Porque usar Map</title>
@@ -185,28 +207,6 @@
       <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
     
       <category term="Comparadores" scheme="http://frontend-weekly.codermarcos.com/tags/comparadores/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Loops no Javascript</title>
-    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript/"/>
-    <id>http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript/</id>
-    <published>2017-10-21T04:58:04.000Z</published>
-    <updated>2018-02-19T12:16:11.734Z</updated>
-    
-    <summary type="html">
-    
-      Conhecendo melhor os laços de repetição do Javascript e suas diferentes utilidades.
-    
-    </summary>
-    
-      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
-    
-    
-      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
-    
-      <category term="Loops" scheme="http://frontend-weekly.codermarcos.com/tags/loops/"/>
     
   </entry>
   
