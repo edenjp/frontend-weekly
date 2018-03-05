@@ -14,6 +14,8 @@
     
         <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
     
+        <meta property="fb:admins" content="100014732220660"/>  
+    
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,6 +39,10 @@
         <div class="categories__container index">
          
             <a 
+            class="categories__category html" 
+            href="/categories/html">Html</a>         
+         
+            <a 
             class="categories__category javascript" 
             href="/categories/javascript">Javascript</a>         
          
@@ -45,8 +51,8 @@
             href="/categories/css">Css</a>         
          
             <a 
-            class="categories__category html" 
-            href="/categories/html">Html</a>         
+            class="categories__category frameworks" 
+            href="/categories/frameworks">Frameworks</a>         
         
         </div>
     </section>
@@ -54,6 +60,29 @@
     <h5 class="divisor">Ultimos</h5>
     
     <section class="posts">
+        
+            <article class="posts__post frameworks">
+    <a 
+        class="posts__post__title" 
+        href="/pt/frameworks/usar-sass-ou-less-no-angular"
+        itemprop="url"
+        target="_blank"
+        title="Alguns problemas que é possivel encontrar usando pre-compiladores e como resolve-los">
+        <h2 itemprop="name">
+            Usar sass ou less no angular</h2>
+    </a>
+    <a 
+        class="posts__post__category" 
+        href="/categories/frameworks"
+        title="Categoria">
+        frameworks</a>
+    <time 
+        class="posts__post__day" 
+        datetime="2018-03-03" 
+        title="Puclicado em 3 mar 2018"
+        itemprop="datePublished">
+        3 mar 2018</time>
+</article>
         
             <article class="posts__post javascript">
     <a 
@@ -124,29 +153,6 @@
         5 fev 2018</time>
 </article>
         
-            <article class="posts__post javascript">
-    <a 
-        class="posts__post__title" 
-        href="/pt/javascript/functions-vs-arrow-functions"
-        itemprop="url"
-        target="_blank"
-        title="Entendendo melhor function e arrow function">
-        <h2 itemprop="name">
-            Functions vs Arrow-functions</h2>
-    </a>
-    <a 
-        class="posts__post__category" 
-        href="/categories/javascript"
-        title="Categoria">
-        javascript</a>
-    <time 
-        class="posts__post__day" 
-        datetime="2018-01-23" 
-        title="Puclicado em 23 jan 2018"
-        itemprop="datePublished">
-        23 jan 2018</time>
-</article>
-        
 
         <nav class="pagination" >
             <a 
@@ -162,8 +168,8 @@
             ...
             <a 
                 class="pagination__link" 
-                href="/lasts/5"                
-                title="Last">5</a>
+                href="/lasts/6"                
+                title="Last">6</a>
             <a 
                 class="pagination__link pagination__link--next" 
                 href="/archives/lasts/2/"
@@ -284,6 +290,18 @@
 </svg>
 
     <script src="/scripts/script.min.js"></script>
+    
+<script>
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
     
     <script type="text/javascript">
         (function (i, s, o, g, r, a, m) {

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://frontend-weekly.codermarcos.com/"/>
-  <updated>2018-03-01T12:43:29.081Z</updated>
+  <updated>2018-03-05T13:27:14.249Z</updated>
   <id>http://frontend-weekly.codermarcos.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Usar sass ou less no angular</title>
+    <link href="http://frontend-weekly.codermarcos.com/pt/frameworks/usar-sass-ou-less-no-angular/"/>
+    <id>http://frontend-weekly.codermarcos.com/pt/frameworks/usar-sass-ou-less-no-angular/</id>
+    <published>2018-03-03T14:55:34.000Z</published>
+    <updated>2018-03-05T13:27:14.249Z</updated>
+    
+    <summary type="html">
+    
+      Alguns problemas que é possivel encontrar usando pre-compiladores e como resolve-los
+    
+    </summary>
+    
+      <category term="Frameworks" scheme="http://frontend-weekly.codermarcos.com/categories/frameworks/"/>
+    
+    
+      <category term="Frameworks" scheme="http://frontend-weekly.codermarcos.com/tags/frameworks/"/>
+    
+      <category term="Angular" scheme="http://frontend-weekly.codermarcos.com/tags/angular/"/>
+    
+      <category term="Scss" scheme="http://frontend-weekly.codermarcos.com/tags/scss/"/>
+    
+      <category term="Less" scheme="http://frontend-weekly.codermarcos.com/tags/less/"/>
+    
+  </entry>
   
   <entry>
     <title>Copiar objetos no javascript</title>
@@ -185,28 +211,6 @@
     
     
       <category term="Css" scheme="http://frontend-weekly.codermarcos.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Conhecendo os recursos do xhr</title>
-    <link href="http://frontend-weekly.codermarcos.com/pt/javascript/conhecendo-os-recursos-do-xhr/"/>
-    <id>http://frontend-weekly.codermarcos.com/pt/javascript/conhecendo-os-recursos-do-xhr/</id>
-    <published>2017-11-21T16:07:04.000Z</published>
-    <updated>2018-01-23T13:22:52.023Z</updated>
-    
-    <summary type="html">
-    
-      Conheçendo recursos do XMLHttpRequest mais conhecido como XHR.
-    
-    </summary>
-    
-      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/categories/javascript/"/>
-    
-    
-      <category term="Javascript" scheme="http://frontend-weekly.codermarcos.com/tags/javascript/"/>
-    
-      <category term="Comparadores" scheme="http://frontend-weekly.codermarcos.com/tags/comparadores/"/>
     
   </entry>
   

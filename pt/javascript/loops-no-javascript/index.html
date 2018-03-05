@@ -14,6 +14,8 @@
     
         <meta name="keywords" content="Frontend-Weekly, FrontendWeekly, Frontend Weekly, Frontend, Weekly, Javascript, HTML, CSS">
     
+        <meta property="fb:admins" content="100014732220660"/>  
+    
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -107,46 +109,59 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numeros = [ <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span> ];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> total = numeros.reduce(<span class="function">(<span class="params">anterior, atual, indice, array</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> anterior + atual;</span><br><span class="line">&#125;);   </span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(total); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure></div>
     <h5 class="divisor">Compartilhar</h5>
         
-<a 
-    device-link
-    class="icon" 
-    target="_blank" 
-    data-action="share/whatsapp/share"
-    title="Compartilhar no whatsapp" 
-    href='{ "mobile": "whatsapp://send?text=http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript/", "desktop": "https://web.whatsapp.com/send?text=http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript/" }'>
-    <svg class="icon__svg">
-        <use xlink:href="#whatsapp">
-    </svg>
-</a>
+<address class="social-icons">
+    
+    <a 
+        device-link
+        class="icon" 
+        target="_blank" 
+        data-action="share/whatsapp/share"
+        title="Compartilhar no whatsapp" 
+        href='{ "mobile": "whatsapp://send?text=http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript", "desktop": "https://web.whatsapp.com/send?text=http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript" }'>
+        <svg class="icon__svg">
+            <use xlink:href="#whatsapp">
+        </svg>
+    </a>
+    
 
-<a 
-    class="icon" 
-    target="_blank" 
-    title="Compartilhar no linkedin" 
-    href="https://www.linkedin.com/shareArticle?mini=true&summary=Frontend Weekly&title=Loops no Javascript&url=http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript/">
-    <svg class="icon__svg">
-        <use xlink:href="#linkedin">
-    </svg>
-</a>
+    
+    <a 
+        class="icon" 
+        target="_blank" 
+        title="Compartilhar no facebook" 
+        href="https://www.facebook.com/sharer.php?u=http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript&t=Loops no Javascript">
+        <svg class="icon__svg">
+            <use xlink:href="#facebook">
+        </svg>
+    </a>
+    
 
-<a 
-    class="icon" 
-    target="_blank" 
-    title="twitter" 
-    href="http://twitter.com/share?text=Loops no Javascript&url=http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript/&hashtags=Frontend Weekly,javascript">
-    <svg class="icon__svg">
-        <use xlink:href="#twitter">
-    </svg>
-</a>
-<a 
-    class="icon" 
-    target="_blank" 
-    title="Compartilhar no facebook" 
-    href="https://www.facebook.com/sharer.php?u=http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript/&t=Loops no Javascript">
-    <svg class="icon__svg">
-        <use xlink:href="#facebook">
-    </svg>
-</a>
+
+    
+    <a 
+        class="icon" 
+        target="_blank" 
+        title="twitter" 
+        href="http://twitter.com/share?text=Loops no Javascript&url=http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript&hashtags=Frontend Weekly,javascript">
+        <svg class="icon__svg">
+            <use xlink:href="#twitter">
+        </svg>
+    </a>
+    
+
+
+    
+    <a 
+        class="icon" 
+        target="_blank" 
+        title="Compartilhar no linkedin" 
+        href="https://www.linkedin.com/shareArticle?mini=true&summary=Frontend Weekly&title=Loops no Javascript&url=http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript">
+        <svg class="icon__svg">
+            <use xlink:href="#linkedin">
+        </svg>
+    </a>
+    
+</address>
 
         
 
@@ -169,6 +184,11 @@
     </section>
 
    
+
+
+<div id="fb-root"></div>
+<div class="fb-comments" data-colorscheme="dark" data-order-by="reverse_time" data-href="http://frontend-weekly.codermarcos.com/pt/javascript/loops-no-javascript" data-numposts="1"></div>
+
 
 <svg style="display: none;" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <symbol id="rss" width="48" viewBox="0 -40 625 660">
@@ -201,6 +221,18 @@
 </svg>
 </main>
     <script src="/scripts/script.min.js"></script>
+    
+<script>
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
     
     <script type="text/javascript">
         (function (i, s, o, g, r, a, m) {
